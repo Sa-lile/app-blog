@@ -1,0 +1,115 @@
+/* Centrer comme login */
+.container {
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Carte */
+.card {
+  background: white;
+  width: 500px;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.card input,
+.card textarea,
+.card select,
+.card .tags-group {
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Bouton */
+.card button {
+  padding: 10px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.7em;
+}
+
+.card button:hover {
+  background-color: #357abd;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;   /* espace entre les boutons */
+}
+
+/* Liste articles */
+.list {
+  margin-top: 30px;
+  width: 500px;
+}
+
+.article {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.article button {
+  margin-right: 5px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* TABLEAU */
+table {
+  width: 900px;
+  margin-top: 30px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+thead {
+  background: #768290;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f2f7ff;
+}
+
+/* Boutons */
+td button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-modifier { background: #2fb0bc; color: white; }
+.btn-publish  { background: #368e36; color: white; }
+.btn-delete   { background: #e75656; color: white; }
