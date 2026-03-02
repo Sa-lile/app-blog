@@ -5,6 +5,11 @@ const jwt = require("jsonwebtoken");
 // Inscription
 const register = (req, res) => {
   const { username, email, password } = req.body;
+  if (!username || !email || !password) {
+    return res.status(400).json({
+      message: "username, email et password sont obligatoires",
+    });
+  }
   // Hashage du mot de passe (Sécurité)
   const hash = bcrypt.hashSync(password, 8);
 
@@ -32,6 +37,12 @@ const register = (req, res) => {
 // Connexion
 const login = (req, res) => {
   const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({
+      message: "email et password sont obligatoires",
+    });
+  }
 
    db.query(
     "SELECT * FROM users WHERE email=?",

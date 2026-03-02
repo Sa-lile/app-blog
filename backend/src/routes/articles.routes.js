@@ -4,7 +4,7 @@ const router = express.Router();
 const articleController = require("../controllers/article.controller");
 
 
-// GET tous les articles -> /api/articles
+// GET tous les articles -> /articles
 router.get('/', async (req, res) => {
     const [articles] = await db.query('SELECT * FROM articles');
     res.json(articles);

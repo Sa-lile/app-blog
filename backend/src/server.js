@@ -20,6 +20,17 @@ app.use(cors({
 
 // Parser le JSON envoyé par le frontend
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && "body" in err) {
+    return res.status(400).json({
+      message: "JSON invalide. Vérifiez le body et le header Content-Type: application/json",
+    });
+  }
+
+  next(err);
+});
 
 // Protection Clickjacking
 app.use((req, res, next) => {
@@ -30,7 +41,7 @@ app.use((req, res, next) => {
 // ------------------- 2. Sessions et CSRF ------------------- //
 // Middleware pour les sessions (nécessaire pour stocker le token CSRF)
 app.use(session({
-  secret: 'secret123',       // clé secrète
+  secret: 'secret123',       // clé secrète defaut
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }  
