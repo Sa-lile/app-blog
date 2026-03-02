@@ -53,7 +53,6 @@ app.get('/csrf-token', (req, res) => {
 // Routes publiques
 app.use("/", authRoutes);
 app.use("/articles", articleRoutes);
-app.use('/users', authRoutes);
 
 // Exemple de route protégée avec CSRF
 app.post('/protected', csrfProtection, (req, res) => {

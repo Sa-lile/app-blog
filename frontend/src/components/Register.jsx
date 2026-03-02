@@ -66,7 +66,7 @@ export default function Register() {
             value={form.password}
             onChange={handleChange}
           />
-          <button type="submit">Valider</button>
+          <button type="submit" onClick={() => navigate("/login")}>Valider</button>
         </form>
         {message && <p className="success">{message}</p>}
         {error && <p className="error">{error}</p>}
